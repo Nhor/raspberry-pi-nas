@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+################################### STORAGE ####################################
+
+# USB flash drives properties and preferences
+
+# For multiple USB flash drives use bash arrays, in that case the first value
+# will be the shared drive while the rest will be used for backups:
+# mount_points=("/mnt/usb-flash-drive1" "/mnt/usb-flash-drive2")
+# partitions=("/dev/sda1" "/dev/sdb1")
+
+# `format_drives` - enable/disable drives formatting during the build, this is
+# recommended because it ensures a compatible VFAT file system but be careful
+# as it WILL REMOVE ALL THE DATA FROM USB FLASH DRIVE(S)
+format_drives="true"
+
+# `mount_points` - directories on which USB flash drives will be mounted
+mount_points="/mnt/usb-flash-drive"
+
+# `partitions` - external drives pathnames located with `sudo fdisk -l` command
+partitions="/dev/sda1"
+
+# `shared_directory` - name of the directory used to contain all shared data
+shared_directory="nas"
+
+############################### USERS AND GROUPS ###############################
+
+# Administrator, shared user and group preferences
+
+# `admin_name` - name of the administrator
+# `admin_pass` - password for the administrator
+admin_name="nas_admin"
+admin_pass="nas_admin1"
+
+# `admin_name` - name of the shared user
+# `admin_pass` - password for the shared user
+user_name="nas_user"
+user_pass="nas_user1"
+
+# `group_name` - name of the group for both administrator and shared user
+group_name="nas_group"
+
+#################################### BACKUP ####################################
+
+# Backups frequency
+
+# This setting applies only when multiple USB flash drives are used
+
+# `cron_backup_frequency` - cron expression for backups frequency, defaults to
+# every day at midnight (00:00 a.m.)
+cron_backup_frequency="0 0 * * *"

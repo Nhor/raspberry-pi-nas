@@ -42,7 +42,7 @@ You just need to make sure you're able to connect to Raspberry Pi through SSH. I
 
 ## Build
 
-You can either follow this scripted approach or a [manual guide](docs/GUIDE_MANUAL.md).
+You can either follow this [scripted approach](docs/GUIDE_SCRIPTED.md) or a [manual guide](docs/GUIDE_MANUAL.md).
 
 ## License
 
